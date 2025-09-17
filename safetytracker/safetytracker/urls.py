@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.http import HttpResponse
 
 def landing_page(request):
-    return HttpResponse("<h1>Mike's Safety Tracker</h1><p>Check out our dashboard at /dashboard/")
+    return HttpResponse("<h1>Mike's Safety Tracker</h1><p>Check out our dashboard at /dashboard/ or the admin at /admin/")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

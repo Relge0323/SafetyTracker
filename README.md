@@ -13,8 +13,14 @@ https://docs.djangoproject.com/en/5.2/topics/templates/
 https://www.w3schools.com/django/index.php
 chatgpt for creating sample data for tables
 
+(django models.py)
+https://www.youtube.com/watch?v=rI95wyHD_6k
+
 (templates and custom html)
 https://www.youtube.com/watch?v=b0CgA_Ap_Mc&list=PLzMcBGfZo4-kQkZp-j9PNyKq7Yw5VYjq9&index=4
+
+(ModelAdmin List Filters)
+https://docs.djangoproject.com/en/5.2/ref/contrib/admin/filters/#:~:text=ModelAdmin%20List%20Filters
 
 ----------BOOTSTRAP RELATED----------
 getbootstrap.com/docs/5.3/getting-started/introduction
