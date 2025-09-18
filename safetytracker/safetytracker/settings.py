@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# where to look for top-level URL config
 ROOT_URLCONF = 'safetytracker.urls'
 
 TEMPLATES = [
