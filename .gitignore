@@ -9,9 +9,3 @@ __pycache__/
 # Virtual environment
 venv/
 
-# Django
-db.sqlite3
-
-# IDE
-.vscode/
-.idea/
