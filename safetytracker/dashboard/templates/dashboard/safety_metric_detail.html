@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Safety Metric Detail
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Safety Metric Detail</h1>
+    <ul class="list-group mt-3">
+        <li class="list-group-item"><strong>Created at:</strong> {{ metric.created_at|date:"Y-m-d H:i" }}</li>
+        <li class="list-group-item"><strong>Total Incidents:</strong> {{ metric.total_incidents }}</li>
+        <li class="list-group-item"><strong>High Severity Incidents:</strong> {{ metric.high_severity_incidents }}</li>
+    </ul>
+    <a href="/dashboard/" class="btn btn-primary mt-3">Back to Dashboard</a>
+</div>
+{% endblock %}

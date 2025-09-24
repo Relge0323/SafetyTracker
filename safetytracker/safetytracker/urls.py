@@ -17,12 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def landing_page(request):
-    return HttpResponse("<h1>Mike's Safety Tracker</h1><p>Check out our dashboard at /dashboard/ or the admin at /admin/")
+    return render(request, "home.html")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
+    path('incidents/', include('incidents.urls')),
     path('', landing_page, name='landing_page'),
 ]

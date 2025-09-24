@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+All Safety metrics{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>All Safety Metrics</h1>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Created At</th>
+                <th>Total Incidents</th>
+                <th>High Severity Incidents</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for metric in metrics %}
+            <tr>
+                <td>{{ metric.id }}</td>
+                <td>{{ metric.created_at|date:"Y-m-d H:i" }}</td>
+                <td>{{ metric.total_incidents }}</td>
+                <td>{{ metric.high_severity_incidents }}</td>
+                <td><a href="{% url 'safety_metric_detail' metric.id %}" class="btn btn-sm btn-primary">View</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No metrics found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

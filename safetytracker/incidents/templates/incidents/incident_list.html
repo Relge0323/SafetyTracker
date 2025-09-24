@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}
-Incident Dashboard
+All Incidents
 {% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-    <h1 class="mb-4">Incident Dashboard</h1>
-    <table class="table table-striped">
+    <h1>All Incident Reports</h1>
+    <table class="table table-striped mt-3">
         <thead>
             <tr>
                 <th>ID</th>
@@ -16,6 +16,7 @@ Incident Dashboard
                 <th>Location</th>
                 <th>Status</th>
                 <th>Date Reported</th>
+                <th>Detail</th>
             </tr>
         </thead>
 
@@ -28,10 +29,13 @@ Incident Dashboard
                 <td>{{ incident.location }}</td>
                 <td>{{ incident.status }}</td>
                 <td>{{ incident.date_reported|date:"Y-m-d H:i" }}</td>
-            </tr>
+                <td>
+                    <a href="{% url 'incident_detail' incident.id %}" class="btn btn-sm btn-primary">View</a>
+                </td>
+            </tr>      
             {% empty %}
             <tr>
-                <td colspan="6">No incidents found.</td>
+                <td colspan="7">No incidents found.</td>
             </tr>
             {% endfor %}
         </tbody>

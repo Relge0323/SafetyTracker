@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Incident Detail{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Incident Detail</h1>
+    <ul class="list-group mt-3">
+        <li class="list-group-item"><strong>Reporter:</strong> {{ incident.reporter.username }}</li>
+        <li class="list-group-item"><strong>Severity:</strong> {{ incident.severity }}</li>
+        <li class="list-group-item"><strong>Location:</strong> {{ incident.location }}</li>
+        <li class="list-group-item"><strong>Status:</strong> {{ incident.status }}</li>
+        <li class="list-group-item"><strong>Date Reported:</strong> {{ incident.date_reported|date:"Y-m-d H:i" }}</li>
+        <li class="list-group-item"><strong>Description:</strong> {{ incident.description }}</li>
+        {% if incident.photo %}
+        <li class="list-group-item">
+            <strong>Photo:</strong><br>
+            <img src="{{ incident.photo.url }}" alt="Incident Photo" class="img-fluid">
+        </li>
+        {% endif %}
+    </ul>
+    <a href="{% url 'incident_list' %}" class="btn btn-primary mt-3">Back to All Incidents</a>
+</div>
+{% endblock %}

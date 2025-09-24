@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from incidents.models import IncidentReport
+from .models import SafetyMetric
 
 # Create your views here.
 def dashboard_home(request):
@@ -8,3 +9,16 @@ def dashboard_home(request):
     context = {'incidents': incidents}
 
     return render(request, 'dashboard/dashboard_home.html', context)
+
+
+def safety_metric_detail(request, pk):
+    metric = get_object_or_404(SafetyMetric, pk=pk)
+
+    return render(request, 'dashboard/safety_metric_detail.html', {'metric': metric})
+
+
+def safety_metric_list(request):
+    metrics = SafetyMetric.objects.all().order_by('-created_at')
+
+    return render(request, 'dashboard/safety_metric_list.html', {'metrics': metrics})
+
